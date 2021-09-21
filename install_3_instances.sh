@@ -11,8 +11,7 @@ mkdir $HOME/.streamrDocker_3
 
 
 cfg_node() {
-  	set timeout 300
-  	spawn docker run -it -v $(cd ~/.$1; pwd):/root/.streamr streamr/broker-node:testnet bin/config-wizard
+    docker run -it -v $(cd ~/.$1; pwd):/root/.streamr streamr/broker-node:testnet bin/config-wizard
   	expect "Do you want to generate"
   	send -- "\n"
   	expect "We strongly recommend"
