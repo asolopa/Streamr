@@ -1,5 +1,4 @@
 #!/bin/bash
-#mkdir $HOME/.streamrDocker
 mkdir $HOME/.streamrDocker_2
 mkdir $HOME/.streamrDocker_3
 
@@ -26,11 +25,8 @@ expect <<END
   	spawn docker run -it --restart=always --name=$1 -d -p $2:$2 -p $4:$4 -p $3:$3 -v $(cd ~/.$1; pwd):/root/.streamr streamr/broker-node:testnet
   	expect eof
 END
-
-
 }
 
-#cfg_node streamrDocker 12345 12348 12351
 cfg_node streamrDocker_2 12346 12349 12352
 cfg_node streamrDocker_3 12347 12350 12353
 
